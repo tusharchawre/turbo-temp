@@ -1,19 +1,21 @@
 {
-  "name": "cli",
-  "version": "0.0.1",
-  "description": "This is a CLI to setup the Project Templates.",
+  "name": "create-tempman",
+  "version": "1.0.2", 
+  "description": "A CLI tool to quickly set up project templates.",
   "type": "module",
   "bin": {
     "create-tempMan": "dist/index.js"
   },
+  "preferGlobal": true,
   "scripts": {
     "build": "tsc -b",
     "start": "node dist/index.js",
     "dev": "npm run build && npm run start"
   },
   "files": [
-    "dist"
-  ],
+  "dist",
+  "templates"
+],
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@types/fs-extra": "^11.0.4",
@@ -26,5 +28,6 @@
     "fs-extra": "^11.3.0",
     "inquirer": "^12.3.2",
     "ora": "^8.1.1"
-  }
+  },
+  "author": "Tushar Chawre"
 }
