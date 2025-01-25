@@ -96,6 +96,7 @@ const updatePackageJson = async (projectDir: string, projectName: string, select
 
         const packageJson = await fs.readJson(packageJsonPath);
 
+        
 
         packageJson.name = projectName;
         packageJson.description = `A ${selectedFramework} project created with tempMan template: ${selectedTemplate}`;
