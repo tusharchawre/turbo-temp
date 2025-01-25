@@ -1,0 +1,30 @@
+{
+  "name": "cli",
+  "version": "0.0.1",
+  "description": "This is a CLI to setup the Project Templates.",
+  "type": "module",
+  "bin": {
+    "create-tempMan": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm run start"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.10.10"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.3.2",
+    "ora": "^8.1.1"
+  }
+}
