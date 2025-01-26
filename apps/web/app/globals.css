@@ -5,6 +5,20 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+
+
+  --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      opacity: 100;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
 
