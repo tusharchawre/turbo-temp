@@ -150,7 +150,7 @@ async function main() {
   process.on("SIGTERM", handleExit);
 
   const program = new Command()
-    .name("create-tempMan")
+    .name("create-turbo-tpl")
     .description("Quickly scaffold new project templates")
     .version("1.0.0", "-v, --version", "Display version")
     .argument("[project-name]", "Name for your new project")

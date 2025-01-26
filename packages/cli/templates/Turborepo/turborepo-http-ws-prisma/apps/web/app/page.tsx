@@ -29,7 +29,7 @@ const page = () => {
         <div className="w-fit px-4 h-10 rounded-md bg-white/5 absolute top-5 right-5 flex items-center justify-center text-white/50 scale-90">
           <p>By</p>
 
-          <a href="https://x.com/TusharCtwt">
+          <a href="">
             <div className="group/link font-bold ml-2 bg-white/10 px-2 py-1 rounded-sm  transition-all flex gap-2 items-center h-7">
               <p className="group-hover/link:underline">Tushar</p>
 
@@ -61,7 +61,7 @@ const page = () => {
 
         <div className="w-fit px-4 h-10 rounded-md bg-white/5 absolute bottom-5 left-[50%] -translate-x-[50%] flex items-center justify-center text-white/50 scale-90">
           <p>More info:</p>
-          <a href="">
+          <a href="https://x.com/TusharCtwt">
             <div className="group/link font-bold ml-2 bg-white/10 px-2 py-1 rounded-sm  transition-all flex gap-2 items-center h-7">
               <p className="group-hover/link:underline">turbo-tpl.vercel.com</p>
 
