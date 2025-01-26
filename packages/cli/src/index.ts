@@ -40,6 +40,7 @@ const handleExit = async () => {
     process.exit(0);
 };
 
+
 const fetchTemplate = async (selectedFramework: string, selectedTemplate: string, projectDir: string, projectName: string) => {
     const templateDir = path.resolve(__dirname, `../templates/${selectedFramework}/${selectedTemplate}`);
 
@@ -60,11 +61,13 @@ const fetchTemplate = async (selectedFramework: string, selectedTemplate: string
         await updatePackageJson(projectDir, projectName, selectedFramework, selectedTemplate);
 
         copySpinner.succeed(chalk.green('Project template created successfully'));
-        await installDependencies(projectDir);
+        await installDependencies(projectDir, selectedFramework);
+
+        const nextStepsCommand = selectedFramework === "Turborepo" ? "pnpm run dev" : "npm run dev";
         console.log(chalk.green('✔ Project setup complete!'));
         console.log(chalk.cyan(`\n🚀 Next steps:`));
         console.log(chalk.gray(`   cd ${path.basename(projectDir)}`));
-        console.log(chalk.gray(`   npm run dev`));
+        console.log(chalk.gray(`   ${nextStepsCommand}`));
     } catch (error) {
         copySpinner.fail(chalk.red('✖ Project template creation failed'));
         console.error(chalk.red('Detailed error:'), error);
@@ -72,23 +75,23 @@ const fetchTemplate = async (selectedFramework: string, selectedTemplate: string
     }
 };
 
-const installDependencies = async (projectDir: string) => {
+
+const installDependencies = async (projectDir: string, selectedFramework: string) => {
     try {
-        const npmSpinner = ora({
-            text: "Installing project dependencies...",
+        const packageManager = selectedFramework === "Turborepo" ? "pnpm" : "npm";
+        const installSpinner = ora({
+            text: `Installing dependencies with ${packageManager}...`,
             spinner: "dots",
             color: "green"
         }).start();
-        
-        await execPromise('npm install', { cwd: projectDir });
-        npmSpinner.succeed(chalk.green('Dependencies installed successfully'));
+
+        await execPromise(`${packageManager} install`, { cwd: projectDir });
+        installSpinner.succeed(chalk.green('Dependencies installed successfully'));
     } catch (error) {
-        console.error(chalk.red('✖ Dependency installation failed:'), error);
+        console.error(chalk.red(`✖ Dependency installation failed for ${selectedFramework}:`), error);
         process.exit(1);
     }
 };
-
-
 const updatePackageJson = async (projectDir: string, projectName: string, selectedFramework: string, selectedTemplate: string) => {
     const packageJsonPath = path.join(projectDir, 'package.json');
     
