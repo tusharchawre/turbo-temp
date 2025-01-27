@@ -1,0 +1,35 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore logs
+*.log
+
+
+
+# Ignore tests and development files
+test/
+tests/
+*.spec.js
+*.test.js
+
+# Ignore build tools and configs
+*.config.js
+*.tsconfig
+*.eslintrc*
+*.prettierrc*
+.vscode/
+dist/ # Only if you're not distributing prebuilt files
+
+# Ignore personal or unnecessary files
+.env
+.env.local
+.DS_Store
+.idea/
+*.bak
+.nyc_output/
+coverage/
+
+# Ignore package lock file
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
