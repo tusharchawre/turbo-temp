@@ -14,7 +14,7 @@ const inter = Inter({
 
 const page = () => {
   return (
-    <div className={`bg-foreground w-full h-fit relative ${inter.className}`}>
+    <div className={`bg-background w-full h-fit relative ${inter.className}`}>
       <Navbar />
       <Hero />
       <Video />
