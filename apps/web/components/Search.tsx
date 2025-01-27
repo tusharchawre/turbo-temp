@@ -1,0 +1,70 @@
+"use client"
+
+import * as React from "react"
+import {
+  Calculator,
+  Calendar,
+  CreditCard,
+  SearchIcon,
+  Settings,
+  Smile,
+  User,
+} from "lucide-react"
+
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/Command"
+
+export function Search() {
+  const [open, setOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
+
+  return (
+    <>
+      <div className="text-sm text-muted-foreground w-48 bg-foreground/30 hover:bg-foreground/60 px-2 py-1 rounded-md flex justify-between border border-white/20 cursor-pointer" onClick={()=>setOpen(true)}>
+
+        <div className="flex items-center gap-2">
+            <SearchIcon className="h-4 w-4"/>
+            <p>Search</p>
+        </div>
+
+      <div className="flex items-center gap-1">
+        Press{" "}
+        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border/20 bg-muted-foreground/50 px-1.5 font-mono text-[10px] font-medium text-white/60 opacity-100 scale-90">
+          <span className="">⌘</span>K
+        </kbd>
+        </div>
+      </div>
+      
+      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+    </>
+  )
+}

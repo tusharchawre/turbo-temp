@@ -1,0 +1,24 @@
+<svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shadcnui" opacity="0.74" clip-path="url(#clip0_11_1561)">
+<g id="Group">
+<g id="Clip path group">
+<mask id="mask0_11_1561" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="39" height="39">
+<g id="SVGID_00000158741390952319197290000007623847114146931895_">
+<path id="Vector" d="M39 0H0V39H39V0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_11_1561)">
+<g id="Group_2">
+<path id="Vector_2" d="M31.668 19.5L19.5 31.668" stroke="white" stroke-width="6.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M29.25 6.08398L6.08398 29.25" stroke="white" stroke-width="6.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_11_1561">
+<rect width="39" height="39" fill="white"/>
+</clipPath>
+</defs>
+</svg>
