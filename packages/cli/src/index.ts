@@ -6,14 +6,11 @@ import fs from "fs-extra";
 import chalk from "chalk";
 import inquirer from "inquirer";
 import { fileURLToPath } from "url";
-import ora from "ora";
-import { exec } from "child_process";
-import { promisify } from "util";
+import { fetchTemplate } from "./utils/fetchTemplate.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const execPromise = promisify(exec);
 let currentProjectDir: string | null = null;
 
 const handleExit = async () => {
@@ -53,97 +50,11 @@ const handleExit = async () => {
   process.exit(0);
 };
 
-const fetchTemplate = async (
-  selectedFramework: string,
-  selectedTemplate: string,
-  projectDir: string,
-  projectName: string,
-) => {
-  const templateDir = path.resolve(
-    __dirname,
-    `../templates/${selectedFramework}/${selectedTemplate}`,
-  );
 
-  if (!fs.existsSync(templateDir)) {
-    console.log(
-      chalk.red(`✖ Error: Template "${selectedTemplate}" not found.`),
-    );
-    process.exit(1);
-  }
 
-  const copySpinner = ora({
-    text: "Scaffolding your project...",
-    spinner: "dots",
-    color: "blue",
-  }).start();
 
-  try {
-    await fs.copy(templateDir, projectDir);
 
-    await updatePackageJson(
-      projectDir,
-      projectName,
-      selectedFramework,
-      selectedTemplate,
-    );
 
-    copySpinner.succeed(chalk.green("Project template created successfully"));
-    await installDependencies(projectDir, selectedFramework);
-
-    const nextStepsCommand =
-      selectedFramework === "Turborepo" ? "pnpm run dev" : "npm run dev";
-    console.log(chalk.green("✔ Project setup complete!"));
-    console.log(chalk.cyan(`\n🚀 Next steps:`));
-    console.log(chalk.gray(`   cd ${path.basename(projectDir)}`));
-    console.log(chalk.gray(`   ${nextStepsCommand}`));
-  } catch (error) {
-    copySpinner.fail(chalk.red("✖ Project template creation failed"));
-    console.error(chalk.red("Detailed error:"), error);
-    process.exit(1);
-  }
-};
-
-const installDependencies = async (
-  projectDir: string,
-  selectedFramework: string,
-) => {
-  try {
-    const packageManager = selectedFramework === "Turborepo" ? "pnpm" : "npm";
-    const installSpinner = ora({
-      text: `Installing dependencies with ${packageManager}...`,
-      spinner: "dots",
-      color: "green",
-    }).start();
-
-    await execPromise(`${packageManager} install`, { cwd: projectDir });
-    installSpinner.succeed(chalk.green("Dependencies installed successfully"));
-  } catch (error) {
-    console.error(
-      chalk.red(`✖ Dependency installation failed for ${selectedFramework}:`),
-      error,
-    );
-    process.exit(1);
-  }
-};
-const updatePackageJson = async (
-  projectDir: string,
-  projectName: string,
-  selectedFramework: string,
-  selectedTemplate: string,
-) => {
-  const packageJsonPath = path.join(projectDir, "package.json");
-
-  try {
-    const packageJson = await fs.readJson(packageJsonPath);
-
-    packageJson.name = projectName;
-    packageJson.description = `A ${selectedFramework} project created with tempMan template: ${selectedTemplate}`;
-
-    await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
-  } catch (error) {
-    console.error(chalk.red("✖ Error updating package.json:"), error);
-  }
-};
 
 async function main() {
   process.on("SIGINT", handleExit);
@@ -163,7 +74,7 @@ async function main() {
               type: "input",
               name: "inputProjectName",
               message: "📝 Project name:",
-              default: "my-tempMan-project",
+              default: "my-turbo-tpl-project",
               validate: (input) => {
                 if (!/^[a-z0-9-]+$/.test(input)) {
                   return "Project name must be lowercase, contain only letters, numbers, and hyphens";

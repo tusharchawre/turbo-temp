@@ -1,1 +1,1 @@
-{"root":["./src/index.ts"],"version":"5.7.3"}
+{"root":["./src/index.ts","./src/utils/fetchtemplate.ts","./src/utils/installdependencies.ts","./src/utils/updatepackagejson.ts"],"version":"5.7.3"}
