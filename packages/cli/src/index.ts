@@ -50,12 +50,6 @@ const handleExit = async () => {
   process.exit(0);
 };
 
-
-
-
-
-
-
 async function main() {
   process.on("SIGINT", handleExit);
   process.on("SIGTERM", handleExit);

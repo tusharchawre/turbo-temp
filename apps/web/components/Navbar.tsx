@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Github, Sun, Moon } from "lucide-react"
-import { Search } from "./Search"
-import { useTheme } from "next-themes"
+import { Github, Sun, Moon } from "lucide-react";
+import { Search } from "./Search";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <div className="w-full mx-auto inset-0 mt-5 flex items-center justify-between h-8 px-8">
@@ -35,6 +35,5 @@ export const Navbar = () => {
         <Github className="text-foreground/50 h-6 w-6 p-1 rounded-sm hover:bg-muted/20 transition" />
       </div>
     </div>
-  )
-}
-
+  );
+};

@@ -10,7 +10,13 @@ interface ButtonProps {
   children: ReactNode;
 }
 
-export const Button = ({ size, variant, className, onClick, children  }: ButtonProps) => {
+export const Button = ({
+  size,
+  variant,
+  className,
+  onClick,
+  children,
+}: ButtonProps) => {
   return (
     <button
       className={`${className}

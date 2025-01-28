@@ -1,16 +1,17 @@
-import { Features } from '@/components/Features'
-import { GradientAnimation } from '@/components/GradientAnimation'
-import { Hero } from '@/components/Hero'
-import { LogoCrate } from '@/components/LogoCrate'
-import { Navbar } from '@/components/Navbar'
-import { Video } from '@/components/Video'
-import { Inter } from 'next/font/google'
-import Image from 'next/image'
-import React from 'react'
+import { Features } from "@/components/Features";
+import { Footer } from "@/components/Footer";
+import { GradientAnimation } from "@/components/GradientAnimation";
+import { Hero } from "@/components/Hero";
+import { LogoCrate } from "@/components/LogoCrate";
+import { Navbar } from "@/components/Navbar";
+import { Video } from "@/components/Video";
+import { Inter } from "next/font/google";
+import Image from "next/image";
+import React from "react";
 
 const inter = Inter({
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 const page = () => {
   return (
@@ -19,11 +20,10 @@ const page = () => {
       <Hero />
       <Video />
       <GradientAnimation />
-
-      
       <Features />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
