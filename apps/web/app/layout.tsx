@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={interFont.className}>
       <body className="bg-background">
-        <ThemeProvider attribute="class" enableSystem>
+        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange> 
           {children}
         </ThemeProvider>
       </body>

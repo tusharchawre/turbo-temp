@@ -18,7 +18,7 @@ function DisplayCard({
   icon = <Sparkles className="size-4 text-blue-300" />,
   title = "Featured",
   description = [],
-  date = "Just now",
+  date = "and more ...",
   iconClassName = "text-muted-foreground/40",
   titleClassName = "",
 }: DisplayCardProps) {
@@ -73,7 +73,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
   const displayCards = cards || defaultCards;
 
   return (
-    <div className="grid [grid-template-areas:'stack'] place-items-center duration-700 relative z-50">
+    <div className="grid [grid-template-areas:'stack'] place-items-center duration-700 relative z-50 -translate-y-12">
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}

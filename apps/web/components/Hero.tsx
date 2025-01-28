@@ -1,15 +1,26 @@
 "use client";
-import { Copy, Terminal } from "lucide-react";
+import { Check, Copy, Terminal } from "lucide-react";
 import Image from "next/image";
 import { Fira_Code } from "next/font/google";
 import { useTheme } from "next-themes";
+import {animate, motion} from "motion/react"
+import { useState } from "react";
 
 const code = Fira_Code({
   subsets: ["latin"],
 });
 
 export const Hero = () => {
-  const { theme, resolvedTheme } = useTheme(); // Use resolvedTheme to check when the theme is set
+  const { theme, resolvedTheme } = useTheme(); 
+
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("npx create-turbo-tpl@latest");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
 
   return (
     <div
@@ -25,7 +36,7 @@ export const Hero = () => {
           headaches - start building what matters in seconds.
         </p>
 
-        <div className="w-2xl h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-12 rounded-2xl px-6 py-2 flex items-center justify-between">
+        <div className="w-2xl h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-12 rounded-2xl px-6 py-2 flex items-center justify-between relative z-[80]">
           <div className="flex items-center gap-4">
             {/* Render the Image only when the theme is resolved */}
             {resolvedTheme ? (
@@ -55,9 +66,29 @@ export const Hero = () => {
             </p>
           </div>
 
-          <div className="hover:bg-muted-foreground/20 transition rounded-md p-2">
-            <Copy className="w-7 h-7 text-foreground/30" />
-          </div>
+         
+          <motion.button
+            onClick={handleCopy}
+            className="bg-none hover:bg-foreground/5 transition-all rounded-md p-2"
+            whileTap={{ scale: 0.9 }}
+          >
+            <motion.div
+              initial={false}
+              animate={{
+                scale: 1
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut"
+              }}
+            >
+              {copied ? (
+                <Check className="w-7 h-7 text-foreground/30" />
+              ) : (
+                <Copy className="w-7 h-7 text-foreground/30" />
+              )}
+            </motion.div>
+          </motion.button>
         </div>
       </div>
     </div>
