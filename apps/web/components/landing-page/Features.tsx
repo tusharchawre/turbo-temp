@@ -1,4 +1,5 @@
-import DisplayCards from "./ui/display-cards";
+import DisplayCards from "../ui/display-cards";
+
 
 export const Features = () => {
   return (

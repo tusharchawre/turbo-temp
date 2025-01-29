@@ -150,6 +150,7 @@
 
 @layer base {
   :root {
+    --sidebar-width: 300px;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;

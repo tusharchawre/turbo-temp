@@ -1,12 +1,10 @@
-import { Features } from "@/components/Features";
-import { Footer } from "@/components/Footer";
-import { GradientAnimation } from "@/components/GradientAnimation";
-import { Hero } from "@/components/Hero";
-import { LogoCrate } from "@/components/LogoCrate";
-import { Navbar } from "@/components/Navbar";
-import { Video } from "@/components/Video";
+import { Features } from "@/components/landing-page/Features";
+import { Footer } from "@/components/landing-page/Footer";
+import { GradientAnimation } from "@/components/landing-page/GradientAnimation";
+import { Hero } from "@/components/landing-page/Hero";
+import { Navbar } from "@/components/landing-page/Navbar";
+import { Video } from "@/components/landing-page/Video";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import React from "react";
 
 const inter = Inter({

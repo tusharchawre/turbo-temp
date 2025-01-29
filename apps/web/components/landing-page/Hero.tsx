@@ -3,7 +3,7 @@ import { Check, Copy, Terminal } from "lucide-react";
 import Image from "next/image";
 import { Fira_Code } from "next/font/google";
 import { useTheme } from "next-themes";
-import {animate, motion} from "motion/react"
+import { animate, motion, useAnimate } from "motion/react";
 import { useState } from "react";
 
 const code = Fira_Code({
@@ -11,16 +11,24 @@ const code = Fira_Code({
 });
 
 export const Hero = () => {
-  const { theme, resolvedTheme } = useTheme(); 
+  const { theme, resolvedTheme } = useTheme();
 
-  const [copied, setCopied] = useState(false);
+  const [scope, animate] = useAnimate();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("npx create-turbo-tpl@latest");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+    animate([
+      [".copy-button", { y: -40 }, { duration: 0.1, ease: "easeOut" }],
+      [
+        ".check-button",
+        { y: -32, color: "#ffffff50" },
+        { duration: 0.1, ease: "easeOut" },
+      ],
+      [".check-button", { y: 0 }, { duration: 0.1, delay: 2, ease: "easeIn" }],
+      [".copy-button", { y: 0 }, { duration: 0.1, ease: "easeIn" }],
+    ]);
 
+    navigator.clipboard.writeText("npx create-turbo-tpl@latest");
+  };
 
   return (
     <div
@@ -66,28 +74,14 @@ export const Hero = () => {
             </p>
           </div>
 
-         
           <motion.button
+            ref={scope}
             onClick={handleCopy}
-            className="bg-none hover:bg-foreground/5 transition-all rounded-md p-2"
-            whileTap={{ scale: 0.9 }}
+            className="bg-none hover:bg-foreground/5 transition-all rounded-md p-2 overflow-hidden relative"
           >
-            <motion.div
-              initial={false}
-              animate={{
-                scale: 1
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut"
-              }}
-            >
-              {copied ? (
-                <Check className="w-7 h-7 text-foreground/30" />
-              ) : (
-                <Copy className="w-7 h-7 text-foreground/30" />
-              )}
-            </motion.div>
+            <Copy className="w-7 h-7 text-foreground/30 copy-button" />
+
+            <Check className="w-7 h-7 text-foreground/30 absolute mt-1 check-button " />
           </motion.button>
         </div>
       </div>
