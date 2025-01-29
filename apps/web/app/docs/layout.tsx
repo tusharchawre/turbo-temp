@@ -1,6 +1,7 @@
 import { AppSidebar } from "@/components/docs/app-sidebar";
 import { Navbar } from "@/components/landing-page/Navbar";
 import { Separator } from "@/components/ui/separator";
+import { docsConfig } from "@/config/docs";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -18,7 +19,7 @@ export default async function DocLayout({
         <Navbar />
         <Separator />
           <div className="flex">
-            <AppSidebar />
+            <AppSidebar config={docsConfig} />
               {children}
           </div>
           </main>
