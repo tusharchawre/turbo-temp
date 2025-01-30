@@ -10,7 +10,7 @@ export const AppSidebar = ({config}: {config: DocsConfig}) => {
 
     return(
         items.length ? (
-        <div className="w-[16rem] h-[calc(100% - 2rem)] flex font-sans">
+        <div className="w-[16rem] h-full flex font-sans">
 
             <div className="w-full px-6 py-12">
             {items.map((item, idx)=>(

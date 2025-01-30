@@ -15,11 +15,13 @@ export default async function DocLayout({
 }>) {
 
   return (
-      <main className={`h-screen overflow-hidden ${inter.className}`} >
+      <main className={`h-screen ${inter.className}`} >
         <Navbar />
         <Separator />
-          <div className="flex">
+          <div className="flex overflow-auto">
+            <aside className="sticky h-screen no-scrollbar overflow-scroll">
             <AppSidebar config={docsConfig} />
+            </aside>
               {children}
           </div>
           </main>

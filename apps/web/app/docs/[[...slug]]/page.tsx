@@ -32,7 +32,7 @@ export default async function DocsPage({params}: DocsPageProps){
 
     return(
         <>
-        <div className="px-16 py-8">
+        <div className="px-16 py-8 overflow-scroll h-[150vh]">
         <h1 className="scroll-m-20 text-3xl font-bold tracking-tight mb-2">
             {doc?.title}
         </h1>
