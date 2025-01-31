@@ -44,7 +44,7 @@ export const Hero = () => {
           headaches - start building what matters in seconds.
         </p>
 
-        <div className="w-2xl h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-12 rounded-2xl px-6 py-2 flex items-center justify-between relative z-[80]">
+        <div className="w-2xl h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-12 rounded-2xl px-6 py-2 flex items-center justify-between relative z-40">
           <div className="flex items-center gap-4">
             {/* Render the Image only when the theme is resolved */}
             {resolvedTheme ? (

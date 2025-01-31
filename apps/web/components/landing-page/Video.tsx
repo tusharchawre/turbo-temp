@@ -12,7 +12,13 @@ export const Video = () => {
         alt="mesh"
       />
 
-      <div className="w-full mx-auto max-w-4xl h-[500px] mt-36 bg-[#0B0B0B] rounded-xl z-30 relative"></div>
+      <div className="w-full mx-auto max-w-4xl h-[500px] mt-36 bg-[#0B0B0B] rounded-3xl z-30 relative overflow-hidden">
+      <video autoPlay loop muted className="w-full h-full object-top object-cover">
+        <source src="/turbo-tpl-final.mp4" type="video/mp4" />
+      </video>
+
+
+      </div>
 
       <LogoCrate />
     </div>

@@ -1,0 +1,179 @@
+---
+title: NextJs with Shadcn
+description: This is a repo with shadcn setup with NextJs
+---
+
+This guide will help you understand the structure and setup of a NextJs configured with Shadcn for consistent and scalable styling across applications and packages.
+
+## Project Structure
+
+Below is the structure of our NextJs setup with Shadcn:
+
+   <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+<Tree
+  className="overflow-hidden rounded-md bg-background p-2"
+  initialSelectedId="1"
+  initialExpandedItems={["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]}
+  elements={[
+    {
+        id: "1",
+        name: "NextJs - Starter",
+        children: [
+            {
+                id: "2",
+                name: "app",
+                children: [
+                    {
+                        id: "3",
+                        name: "favicon.ico"
+                    },
+                    {
+                        id: "4",
+                        name: "globals.css"
+                    },
+                    {
+                        id: "5",
+                        name: "layout.tsx"
+                    },
+                    {
+                        id: "6",
+                        name: "page.tsx"
+                    }
+                ]
+            },
+            {
+              id: "7",
+              name: "public",
+              children: [
+                  {
+                      id: "8",
+                      name: "vercel.svg"
+                  }
+              ]
+            },
+            {
+                id: "9",
+                name: "components",
+                children: [
+                    {
+                        id: "10",
+                        name: "ui",
+                        children: [
+                            {
+                                id: "11",
+                                name: "button.tsx"
+                            },
+                            
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "12",
+                name: "lib",
+                children:[
+                    {
+                        id: "13",
+                        name: "utils.ts"
+                    }
+                ]
+            },
+            {
+                id: "14",    
+                name: ".gitignore"
+            },
+            {
+                id: "15",
+                name: "components.json"
+            },
+            {
+                id: "16",
+                name: "eslint.config.mjs"
+            },
+            {
+                id: "17",
+                name: "package.json"
+            },
+            {
+                id: "18",
+                name: "postcss.config.mjs"
+            },
+            {
+                id: "19",
+                name: "README.md"
+            },
+            {
+                id: "20",
+                name: "tailwind.config.ts"
+            },
+
+            {
+                id: "21",
+                name: "tsconfig.json"
+            }
+        ]
+    }
+  ]}
+>
+    <Folder element="NextJs with Shadcn" value="1">
+        <Folder element="app" value="2">
+            <File value="3"><p>favicon.ico</p></File>
+            <File value="4"><p>globals.css</p></File>
+            <File value="5"><p>layout.tsx</p></File>
+            <File value="6"><p>page.tsx</p></File>
+        </Folder>
+        <Folder element="public" value="7">
+            <File value="8"><p>vercel.svg</p></File>
+        </Folder>
+        <Folder element="components" value="9">
+            <Folder element="ui" value="10">
+                <File value="11"><p>button.tsx</p></File>
+            </Folder>
+        </Folder>
+        <Folder element="lib" value="12">
+            <File value="13"><p>utils.ts</p></File>
+        </Folder>
+        <File value="14"><p>.gitignore</p></File>
+        <File value="15"><p>components.json</p></File>
+        <File value="16"><p>eslint.config.mjs</p></File>
+        <File value="17"><p>package.json</p></File>
+        <File value="18"><p>postcss.config.mjs</p></File>
+        <File value="19"><p>README.md</p></File>
+        <File value="20"><p>tailwind.config.ts</p></File>
+        <File value="21"><p>tsconfig.json</p></File>
+    </Folder>
+</Tree> 
+</div>
+
+## Getting Started
+
+<Step>
+```bash
+npx create-turbo-tpl@latest
+```
+
+Select "NextJs" when prompted for your framework choice.
+</Step>
+
+
+
+
+## Quick Start
+
+<Step copyCommand={false}>
+```bash
+# Run the CLI
+npx create-turbo-tpl@latest
+
+# Choose your setup
+✔ Project name: my-nextjs-app
+✔ Select framework › NextJs
+✔ Choose template › NextJs-w-shadcn
+
+# Your project is ready!
+cd my-nextjs-app
+pnpm run dev
+```
+</Step>
+
+

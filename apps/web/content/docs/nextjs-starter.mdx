@@ -5,6 +5,111 @@ description: 'NextJs starter template for rapid development'
 
 Skip the setup headaches and start building your NextJs application immediately with our pre-configured templates.
 
+
+
+## Folder Structure
+
+Below is the structure of our NextJs starter template:
+
+<div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+<Tree
+  className="overflow-hidden rounded-md bg-background p-2"
+  initialSelectedId="1"
+  initialExpandedItems={["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]}
+  elements={[
+    {
+        id: "1",
+        name: "NextJs - Starter",
+        children: [
+            {
+                id: "2",
+                name: "app",
+                children: [
+                    {
+                        id: "3",
+                        name: "favicon.ico"
+                    },
+                    {
+                        id: "4",
+                        name: "globals.css"
+                    },
+                    {
+                        id: "5",
+                        name: "layout.tsx"
+                    },
+                    {
+                        id: "6",
+                        name: "page.tsx"
+                    }
+                ]
+            },
+            {
+              id: "7",
+              name: "public",
+              children: [
+                  {
+                      id: "8",
+                      name: "vercel.svg"
+                  }
+              ]
+            },
+            {
+                id: "9",    
+                name: ".gitignore"
+            },
+            {
+                id: "10",
+                name: "eslint.config.mjs"
+            },
+            {
+                id: "11",
+                name: "package.json"
+            },
+            {
+                id: "12",
+                name: "postcss.config.mjs"
+            },
+            {
+                id: "13",
+                name: "README.md"
+            },
+            {
+                id: "14",
+                name: "tailwind.config.ts"
+            },
+
+            {
+                id: "15",
+                name: "tsconfig.json"
+            }
+        ]
+    }
+  ]}
+>
+
+<Folder element="NextJs - Starter" value="1">
+    <Folder element="app" value="2">
+        <File value="3"><p>favicon.ico</p></File>
+        <File value="4"><p>globals.css</p></File>
+        <File value="5"><p>layout.tsx</p></File>
+        <File value="6"><p>page.tsx</p></File>
+    </Folder>
+    <Folder element="public" value="7">
+        <File value="8"><p>vercel.svg</p></File>
+    </Folder>
+    <File value="9"><p>.gitignore</p></File>
+    <File value="10"><p>eslint.config.mjs</p></File>
+    <File value="11"><p>package.json</p></File>
+    <File value="12"><p>postcss.config.mjs</p></File>
+    <File value="13"><p>README.md</p></File>
+    <File value="14"><p>tailwind.config.ts</p></File>
+    <File value="15"><p>tsconfig.json</p></File>
+</Folder>
+</Tree>
+
+
+</div>
+
 ## Getting Started
 
 <Step>
@@ -16,13 +121,7 @@ Select "NextJs" when prompted for your framework choice.
 </Step>
 
 
-## Folder Structure
 
-Below is the structure of our NextJs starter template:
-
-   <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-
-   </div>
 
 ## Quick Start
 
