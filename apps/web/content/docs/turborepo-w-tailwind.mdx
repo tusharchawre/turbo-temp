@@ -99,102 +99,213 @@ Below is the structure of our Turborepo setup with Tailwind CSS:
       {
         id: "13",
         isSelectable: true,
-        name: "eslint.config.js",
+        name: "packages",
+        children: [
+            {
+                id: "14",
+                isSelectable: true,
+                name: "eslint-config",
+                children: [
+                    {
+                        id: "15",
+                        isSelectable: true,
+                        name: "base.js",
+                    },
+                    {
+                        id: "16",
+                        isSelectable: true,
+                        name: "next.js",
+                    },
+                    {
+                        id: "17",
+                        isSelectable: true,
+                        name: "package.json"
+                    },
+                    {
+                        id: "18",
+                        isSelectable: true,
+                        name: "README.md"
+                    }
+                ]
+            },
+            {
+                id: "19",
+                isSelectable: true,
+                name: "tailwind-config",
+                children: [
+                    {
+                        id: "20",
+                        isSelectable: true,
+                        name: "tailwind.config.js"
+                    },
+                    {
+                        id: "21",
+                        isSelectable: true,
+                        name: "package.json"
+                    },
+                    {
+                        id: "22",
+                        isSelectable: true,
+                        name: "tsconfig.json"
+                    }
+                ]
+            },
+            {
+                id: "23",
+                isSelectable: true,
+                name: "typescript-config",
+                children:[
+                    {
+                        id: "24",
+                        isSelectable: true,
+                        name: "base.json"
+                    },
+                    {
+                        id: "25",
+                        isSelectable: true,
+                        name: "nextjs.json"
+                    },
+                    {
+                        id:"26",
+                        isSelectable: true,
+                        name: "package.json"
+                    },
+                    {
+                        id: "27",
+                        isSelectable: true,
+                        name: "react-library.json"
+                    }
+                ]
+            },
+            {
+                id: "28",
+                isSelectable: true,
+                name: "ui",
+                children: [
+                    {
+                        id: "29",
+                        isSelectable: true,
+                        name: "src",
+                        children: [
+                            {
+                                id: "30",
+                                isSelectable: true,
+                                name: "button.tsx"
+                            }
+                        ]
+                    },
+                    {
+                        id: "31",
+                        isSelectable: true,
+                        name: "eslint.config.js"
+                    },
+                    {
+                        id: "32",
+                        isSelectable: true,
+                        name: "package.json"
+                    },{
+                        id: "33",
+                        isSelectable: true,
+                        name: "postcss.config.js"
+                    },{
+                        id: "34",
+                        isSelectable: true,
+                        name: "tailwind.config.js"
+                    },{
+                        id: "35",
+                        isSelectable: true,
+                        name: "tsconfig.json"
+                    }
+                ]
+            }
+
+        ]
       },
       {
-        id: "14",
+        id: "36",
         isSelectable: true,
-        name: "next-env.d.ts",
-      },
-      {
-        id: "15",
+        name: ".gitignore"
+      },{
+        id: "37",
         isSelectable: true,
-        name: "next.config.ts",
-      },
-      {
-        id: "16",
+        name: "meta.json"
+      },{
+        id: "38",
         isSelectable: true,
-        name: "package.json",
-      },
-      {
-        id: "17",
+        name: "package.json"
+      },{
+        id: "39",
         isSelectable: true,
-        name: "postcss.config.js",
-      },
-      {
-        id: "18",
+        name: "pnpm-lock.yaml"
+      },{
+        id: "40",
         isSelectable: true,
-        name: "README.md",
-      },
-      {
-        id: "19",
+        name: "pnpm-workspace.yaml"
+      },{
+        id: "41",
         isSelectable: true,
-        name: "tailwind.config.ts",
-      },
-      {
-        id: "20",
+        name: "README.md"
+      },{
+        id: "42",
         isSelectable: true,
-        name: "tsconfig.json",
-      },
+        name: "turbo.json"
+      }
     ],
   },
 ]}
       >
-        <Folder element="turborepo-with-tailwindcss" value="1">
+
+      <Folder element="turborepo-with-tailwindcss" value="1">
           <Folder element="apps/web" value="2">
             <Folder element="app" value="3">
-              <File value="4">
-                <p>favicon.ico</p>
-              </File>
-              <File value="5">
-                <p>globals.css</p>
-              </File>
-              <File value="6">
-                <p>layout.tsx</p>
-              </File>
-              <File value="7">
-                <p>page.tsx</p>
-              </File>
+              <File value="4"><p>favicon.ico</p></File>
+              <File value="5"><p>globals.css</p></File>
+              <File value="6"><p>layout.tsx</p></File>
+              <File value="7"><p>page.tsx</p></File>
             </Folder>
             <Folder element="public" value="8">
-              <File value="9">
-                <p>circles.svg</p>
-              </File>
-              <File value="10">
-                <p>next.svg</p>
-              </File>
-              <File value="11">
-                <p>turborepo.svg</p>
-              </File>
-              <File value="12">
-                <p>vercel.svg</p>
-              </File>
+              <File value="9"><p>circles.svg</p></File>
+              <File value="10"><p>next.svg</p></File>
+              <File value="11"><p>turborepo.svg</p></File>
+              <File value="12"><p>vercel.svg</p></File>
             </Folder>
           </Folder>
-          <File value="13">
-            <p>eslint.config.js</p>
-          </File>
-          <File value="14">
-            <p>next-env.d.ts</p>
-          </File>
-          <File value="15">
-            <p>next.config.ts</p>
-          </File>
-          <File value="16">
-            <p>package.json</p>
-          </File>
-          <File value="17">
-            <p>postcss.config.js</p>
-          </File>
-          <File value="18">
-            <p>README.md</p>
-          </File>
-          <File value="19">
-            <p>tailwind.config.ts</p>
-          </File>
-          <File value="20">
-            <p>tsconfig.json</p>
-          </File>
+          <Folder element="packages" value="13">
+            <Folder element="eslint-config" value="14">
+              <File value="15"><p>base.js</p></File>
+              <File value="16"><p>next.js</p></File>
+              <File value="17"><p>package.json</p></File>
+              <File value="18"><p>README.md</p></File>
+            </Folder>
+            <Folder element="tailwind-config" value="19">
+              <File value="20"><p>tailwind.config.js</p></File>
+              <File value="21"><p>package.json</p></File>
+              <File value="22"><p>tsconfig.json</p></File>
+            </Folder>
+            <Folder element="typescript-config" value="23">
+              <File value="24"><p>base.json</p></File>
+              <File value="25"><p>nextjs.json</p></File>
+              <File value="26"><p>package.json</p></File>
+              <File value="27"><p>react-library.json</p></File>
+            </Folder>
+            <Folder element="ui" value="28">
+              <Folder element="src" value="29">
+                <File value="30"><p>button.tsx</p></File>
+              </Folder>
+              <File value="31"><p>eslint.config.js</p></File>
+              <File value="32"><p>package.json</p></File>
+              <File value="33"><p>postcss.config.js</p></File>
+              <File value="34"><p>tailwind.config.js</p></File>
+              <File value="35"><p>tsconfig.json</p></File>
+            </Folder>
+          </Folder>
+          <File value="36"><p>.gitignore</p></File>
+          <File value="37"><p>meta.json</p></File>
+          <File value="38"><p>package.json</p></File>
+          <File value="39"><p>pnpm-lock.yaml</p></File>
+          <File value="40"><p>pnpm-workspace.yaml</p></File>
+          <File value="41"><p>README.md</p></File>
+          <File value="42"><p>turbo.json</p></File>
         </Folder>
       </Tree>
 

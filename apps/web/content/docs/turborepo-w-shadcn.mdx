@@ -10,229 +10,330 @@ This guide will help you understand the structure and setup of a Turborepo confi
 Below is the structure of our Turborepo setup with Shadcn/UI:
 
 <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-  <Tree
-    className="overflow-hidden rounded-md bg-background p-2"
-    initialSelectedId="1"
-    initialExpandedItems={[
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
-      "14",
-    ]}
-    elements={[
+
+
+<Tree
+        className="overflow-hidden rounded-md bg-background p-2"
+        initialSelectedId="1"
+        initialExpandedItems={[
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+          "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+          "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"
+        ]}
+        elements={[
+  {
+    id: "1",
+    isSelectable: true,
+    name: "turborepo-with-shadcn",
+    children: [
       {
-        id: "1",
+        id: "2",
         isSelectable: true,
-        name: "turborepo-with-shadcn",
+        name: "apps/web",
         children: [
           {
-            id: "2",
+            id: "3",
             isSelectable: true,
-            name: "apps/web",
+            name: "app",
             children: [
               {
-                id: "3",
+                id: "4",
                 isSelectable: true,
-                name: "app",
-                children: [
-                  {
-                    id: "4",
-                    isSelectable: true,
-                    name: "components",
-                    children: [
-                      {
-                        id: "5",
-                        isSelectable: true,
-                        name: ".gitkeep",
-                      },
-                    ],
-                  },
-                  {
-                    id: "6",
-                    isSelectable: true,
-                    name: "hooks",
-                    children: [
-                      {
-                        id: "7",
-                        isSelectable: true,
-                        name: ".gitkeep",
-                      },
-                    ],
-                  },
-                  {
-                    id: "8",
-                    isSelectable: true,
-                    name: "lib",
-                    children: [
-                      {
-                        id: "9",
-                        isSelectable: true,
-                        name: ".gitkeep",
-                      },
-                    ],
-                  },
-                  {
-                    id: "10",
-                    isSelectable: true,
-                    name: "providers.tsx",
-                  },
-                ],
+                name: "favicon.ico",
               },
+              {
+                id: "5",
+                isSelectable: true,
+                name: "layout.tsx",
+              },
+              {
+                id: "6",
+                isSelectable: true,
+                name: "page.tsx",
+              },
+            ],
+          },
+          {
+            id: "7",
+            isSelectable: true,
+            name: "components",
+            children: [
+              {
+                id: "8",
+                isSelectable: true,
+                name: ".gitkeep",
+              },
+              {
+                id: "9",
+                isSelectable: true,
+                name: "providers.tsx",
+              },
+            ],
+          },
+          {
+            id: "10",
+            isSelectable: true,
+            name: "hooks",
+            children: [
               {
                 id: "11",
                 isSelectable: true,
-                name: "components.json",
+                name: ".gitkeep"
               },
               {
                 id: "12",
                 isSelectable: true,
-                name: "eslint.config.js",
-              },
-              {
-                id: "13",
-                isSelectable: true,
-                name: "next-env.d.ts",
-              },
-              {
-                id: "14",
-                isSelectable: true,
-                name: "next.config.mjs",
-              },
-              {
-                id: "15",
-                isSelectable: true,
-                name: "package.json",
-              },
-              {
-                id: "16",
-                isSelectable: true,
-                name: "postcss.config.mjs",
-              },
-              {
-                id: "17",
-                isSelectable: true,
-                name: "tailwind.config.ts",
-              },
-              {
-                id: "18",
-                isSelectable: true,
-                name: "tsconfig.json",
-              },
-            ],
+                name: "lib"
+              }
+            ]
+          },
+          {
+            id: "13",
+            isSelectable: true,
+            name: "components.json"
+          },
+          {
+            id: "14",
+            isSelectable: true,
+            name: "eslint.config.js"
+          },
+          {
+            id: "15",
+            isSelectable: true,
+            name: "next-env.d.ts"
+          },
+          {
+            id: "16",
+            isSelectable: true,
+            name: "next.config.mjs"
+          },
+          {
+            id: "17",
+            isSelectable: true,
+            name: "package.json"
+          },
+          {
+            id: "18",
+            isSelectable: true,
+            name: "postcss.config.mjs"
           },
           {
             id: "19",
             isSelectable: true,
-            name: "packages",
-            children: [
-              {
-                id: "20",
-                isSelectable: true,
-                name: "package.json",
-              },
-            ],
+            name: "tailwind.config.ts"
           },
           {
-            id: "21",
+            id: "20",
             isSelectable: true,
-            name: "pnpm-lock.yaml",
-          },
+            name: "tsconfig.json"
+          }
+        ],
+      },
+      {
+        id: "21",
+        isSelectable: true,
+        name: "packages",
+        children: [
           {
             id: "22",
             isSelectable: true,
-            name: "pnpm-workspace.yaml",
+            name: "eslint-config",
+            children: [
+              {
+                id: "23",
+                isSelectable: true,
+                name: "node_modules"
+              },
+              {
+                id: "24",
+                isSelectable: true,
+                name: "base.js"
+              },
+              {
+                id: "25",
+                isSelectable: true,
+                name: "next.js"
+              },
+              {
+                id: "26",
+                isSelectable: true,
+                name: "package.json"
+              },
+              {
+                id: "27",
+                isSelectable: true,
+                name: "react-internal.js"
+              },
+              {
+                id: "28",
+                isSelectable: true,
+                name: "README.md"
+              }
+            ]
           },
           {
-            id: "23",
+            id: "29",
             isSelectable: true,
-            name: "README.md",
+            name: "typescript-config",
+            children: [
+              {
+                id: "30",
+                isSelectable: true,
+                name: "base.json"
+              },
+              {
+                id: "31",
+                isSelectable: true,
+                name: "nextjs.json"
+              },
+              {
+                id: "32",
+                isSelectable: true,
+                name: "package.json"
+              },
+              {
+                id: "33",
+                isSelectable: true,
+                name: "react-library.json"
+              },
+              {
+                id: "34",
+                isSelectable: true,
+                name: "README.md"
+              }
+            ]
           },
           {
-            id: "24",
+            id: "35",
             isSelectable: true,
-            name: "tsconfig.json",
-          },
-        ],
+            name: "ui",
+            children: [
+              {
+                id: "36",
+                isSelectable: true,
+                name: "node_modules"
+              },
+              {
+                id: "37",
+                isSelectable: true,
+                name: "src"
+              },
+              {
+                id: "38",
+                isSelectable: true,
+                name: "components.json"
+              },
+              {
+                id: "39",
+                isSelectable: true,
+                name: "eslint.config.js"
+              },
+              {
+                id: "40",
+                isSelectable: true,
+                name: "package.json"
+              },
+              {
+                id: "41",
+                isSelectable: true,
+                name: "tsconfig.json"
+              },
+              {
+                id: "42",
+                isSelectable: true,
+                name: "tsconfig.lint.json"
+              }
+            ]
+          }
+        ]
       },
-    ]}
-  >
-    <Folder element="turborepo-with-shadcn" value="1">
-      <Folder element="apps/web" value="2">
-        <Folder element="app" value="3">
-          <Folder element="components" value="4">
-            <File value="5">
-              <p>.gitkeep</p>
-            </File>
-            <File value="10">
-            <p>providers.tsx</p>
-            </File>
+      {
+        id: "43",
+        isSelectable: true,
+        name: "package.json"
+      },
+      {
+        id: "44",
+        isSelectable: true,
+        name: "pnpm-lock.yaml"
+      },
+      {
+        id: "45",
+        isSelectable: true,
+        name: "pnpm-workspace.yaml"
+      },
+      {
+        id: "46",
+        isSelectable: true,
+        name: "README.md"
+      },
+      {
+        id: "47",
+        isSelectable: true,
+        name: "turbo.json"
+      }
+    ],
+  },
+]}
+      >
+        <Folder element="turborepo-with-shadcn" value="1">
+          <Folder element="apps/web" value="2">
+            <Folder element="app" value="3">
+              <File value="4"><p>favicon.ico</p></File>
+              <File value="5"><p>layout.tsx</p></File>
+              <File value="6"><p>page.tsx</p></File>
+            </Folder>
+            <Folder element="components" value="7">
+              <File value="8"><p>.gitkeep</p></File>
+              <File value="9"><p>providers.tsx</p></File>
+            </Folder>
+            <Folder element="hooks" value="10">
+              <File value="11"><p>.gitkeep</p></File>
+            </Folder>
+            <Folder value="12"><p>lib</p></Folder>
+            <File value="13"><p>components.json</p></File>
+            <File value="14"><p>eslint.config.js</p></File>
+            <File value="15"><p>next-env.d.ts</p></File>
+            <File value="16"><p>next.config.mjs</p></File>
+            <File value="17"><p>package.json</p></File>
+            <File value="18"><p>postcss.config.mjs</p></File>
+            <File value="19"><p>tailwind.config.ts</p></File>
+            <File value="20"><p>tsconfig.json</p></File>
           </Folder>
-          <Folder element="hooks" value="6">
-            <File value="7">
-              <p>.gitkeep</p>
-            </File>
+          <Folder element="packages" value="21">
+            <Folder element="eslint-config" value="22">
+              <File value="23"><p>node_modules</p></File>
+              <File value="24"><p>base.js</p></File>
+              <File value="25"><p>next.js</p></File>
+              <File value="26"><p>package.json</p></File>
+              <File value="27"><p>react-internal.js</p></File>
+              <File value="28"><p>README.md</p></File>
+            </Folder>
+            <Folder element="typescript-config" value="29">
+              <File value="30"><p>base.json</p></File>
+              <File value="31"><p>nextjs.json</p></File>
+              <File value="32"><p>package.json</p></File>
+              <File value="33"><p>react-library.json</p></File>
+              <File value="34"><p>README.md</p></File>
+            </Folder>
+            <Folder element="ui" value="35">
+              <File value="36"><p>node_modules</p></File>
+              <File value="37"><p>src</p></File>
+              <File value="38"><p>components.json</p></File>
+              <File value="39"><p>eslint.config.js</p></File>
+              <File value="40"><p>package.json</p></File>
+              <File value="41"><p>tsconfig.json</p></File>
+              <File value="42"><p>tsconfig.lint.json</p></File>
+            </Folder>
           </Folder>
-          <Folder element="lib" value="8">
-            <File value="9">
-              <p>.gitkeep</p>
-            </File>
-          </Folder>
-          
+          <File value="43"><p>package.json</p></File>
+          <File value="44"><p>pnpm-lock.yaml</p></File>
+          <File value="45"><p>pnpm-workspace.yaml</p></File>
+          <File value="46"><p>README.md</p></File>
+          <File value="47"><p>turbo.json</p></File>
         </Folder>
-        <File value="11">
-          <p>components.json</p>
-        </File>
-        <File value="12">
-          <p>eslint.config.js</p>
-        </File>
-        <File value="13">
-          <p>next-env.d.ts</p>
-        </File>
-        <File value="14">
-          <p>next.config.mjs</p>
-        </File>
-        <File value="15">
-          <p>package.json</p>
-        </File>
-        <File value="16">
-          <p>postcss.config.mjs</p>
-        </File>
-        <File value="17">
-          <p>tailwind.config.ts</p>
-        </File>
-        <File value="18">
-          <p>tsconfig.json</p>
-        </File>
-      </Folder>
-      <Folder element="packages" value="19">
-        <File value="20">
-          <p>package.json</p>
-        </File>
-      </Folder>
-      <File value="21">
-        <p>pnpm-lock.yaml</p>
-      </File>
-      <File value="22">
-        <p>pnpm-workspace.yaml</p>
-      </File>
-      <File value="23">
-        <p>README.md</p>
-      </File>
-      <File value="24">
-        <p>tsconfig.json</p>
-      </File>
-    </Folder>
-  </Tree>
+      </Tree>
+
 </div>
 
 ## Key Features

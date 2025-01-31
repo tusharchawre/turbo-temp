@@ -58,8 +58,8 @@ export const docsConfig : DocsConfig = {
                     href: "/docs/turborepo-w-tailwind"
                 },
                 {
-                    title: "Turborepo with Express and WS",
-                    href: "/docs/turborepo-w-express-ws"
+                    title: "Turborepo with Express-WS-Prisma",
+                    href: "/docs/turborepo-express-ws-prisma"
                 },
                 {
                     title: "NextJs (Starter)",

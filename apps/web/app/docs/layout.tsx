@@ -20,7 +20,7 @@ export default async function DocLayout({
     <Navbar />
     <Separator />
     <div className="flex flex-1 overflow-hidden">
-      <aside className="sticky top-0 h-screen overflow-y-auto shrink-0">
+      <aside className="sticky top-0 h-screen overflow-hidden shrink-0">
         <AppSidebar config={docsConfig} />
       </aside>
       <div className="flex-1 h-full overflow-auto">

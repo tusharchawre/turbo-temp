@@ -2,13 +2,7 @@
 
 import * as React from "react";
 import {
-  Calculator,
-  Calendar,
-  CreditCard,
   SearchIcon,
-  Settings,
-  Smile,
-  User,
 } from "lucide-react";
 
 import {
@@ -21,9 +15,13 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/Command";
+import { allDocs } from "contentlayer/generated";
+import { useRouter } from "next/navigation";
 
 export function Search() {
   const [open, setOpen] = React.useState(false);
+
+  const router = useRouter()
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -60,10 +58,21 @@ export function Search() {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+          <CommandGroup heading="Documents">
+            {
+              allDocs.map((doc) => (
+                <CommandItem
+                key={doc._id}
+                onSelect={() => {
+                  setOpen(false); 
+                  router.push(`/docs/${doc.slugAsParams}`); 
+                }}
+              >
+                {doc.title}
+              </CommandItem>
+              ))
+            }
+
           </CommandGroup>
         </CommandList>
       </CommandDialog>

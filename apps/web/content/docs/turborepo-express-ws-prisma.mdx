@@ -1,0 +1,232 @@
+---
+title: Turborepo with Express & Prisma
+description: Monorepo setup with Express.js, WebSockets, Prisma ORM, and Turborepo
+---
+
+This guide demonstrates a production-ready Turborepo configuration featuring Express.js, WebSockets, Prisma ORM, and Docker integration for backend services.
+
+## Project Structure
+
+<div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+<Tree
+  className="overflow-hidden rounded-md bg-background p-2"
+  initialSelectedId="1"
+  initialExpandedItems={["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]}
+  elements={[
+    {
+      id: "1",
+      isSelectable: true,
+      name: "turborepo-http-ws-prisma",
+      children: [
+        {
+          id: "2",
+          isSelectable: true,
+          name: "apps",
+          children: [
+            {
+              id: "3",
+              name: "http-backend",
+              children: [
+                { id: "4", name: "prisma" },
+                { id: "5", name: "src" },
+                { id: "6", name: "env" },
+                { id: "7", name: "env.example" },
+                { id: "8", name: "package.json" },
+                { id: "9", name: "tsconfig.json" }
+              ]
+            },
+            {
+              id: "10",
+              name: "web",
+              children: [
+                { id: "11", name: "app" },
+                { id: "12", name: "lib" },
+                { id: "13", name: "public" },
+                { id: "14", name: "env" },
+                { id: "15", name: "components.json" },
+                { id: "16", name: "tailwind.config.js" },
+                { id: "17", name: "postcss.config.js" },
+                { id: "18", name: "package.json" }
+              ]
+            },
+            {
+              id: "19",
+              name: "ws-backend",
+              children: [
+                { id: "20", name: "src" },
+                { id: "21", name: "env" },
+                { id: "22", name: "env.example" }
+              ]
+            }
+          ]
+        },
+        {
+          id: "23",
+          isSelectable: true,
+          name: "packages",
+          children: [
+            {
+              id: "24",
+              name: "common",
+              children: [
+                { id: "25", name: "src" },
+                { id: "26", name: "package.json" },
+                { id: "27", name: "tsconfig.json" }
+              ]
+            },
+            {
+              id: "28",
+              name: "db",
+              children: [
+                { id: "29", name: "prisma" },
+                { id: "30", name: "src" },
+                { id: "31", name: "package.json" }
+              ]
+            },
+            {
+              id: "32",
+              name: "eslint-config",
+              children: [
+                { id: "33", name: "base.js" },
+                { id: "34", name: "next.js" },
+                { id: "35", name: "package.json" }
+              ]
+            },
+            {
+              id: "36",
+              name: "typescript-config",
+              children: [
+                { id: "37", name: "base.json" },
+                { id: "38", name: "nextjs.json" },
+                { id: "39", name: "package.json" }
+              ]
+            },
+            {
+              id: "40",
+              name: "ui",
+              children: [
+                { id: "41", name: "src", children: [
+                  { id: "42", name: "button.tsx" },
+                  { id: "43", name: "card.tsx" },
+                  { id: "44", name: "code.tsx" }
+                ]},
+                { id: "45", name: "package.json" },
+                { id: "46", name: "tsconfig.json" }
+              ]
+            }
+          ]
+        },
+        {
+          id: "47",
+          name: ".gitignore"
+        },
+        {
+          id: "48",
+          name: ".npmrc"
+        },
+        {
+          id: "49",
+          name: "package.json"
+        },
+        {
+          id: "50",
+          name: "pnpm-lock.yaml"
+        },
+        {
+          id: "51",
+          name: "turbo.json"
+        }
+      ]
+    }
+  ]}
+>
+  <Folder element="turborepo-http-ws-prisma" value="1">
+    <Folder element="apps" value="2">
+      <Folder element="http-backend" value="3">
+        <Folder value="4"><p>prisma</p></Folder>
+        <Folder value="5"><p>src</p></Folder>
+        <Folder value="6"><p>env</p></Folder>
+        <File value="7"><p>env.example</p></File>
+        <File value="8"><p>package.json</p></File>
+        <File value="9"><p>tsconfig.json</p></File>
+      </Folder>
+      <Folder element="web" value="10">
+        <Folder value="11" element="app"><p>app</p></Folder>
+        <Folder value="12" element="lib"><p>lib</p></Folder>
+        <Folder value="13" element="public"><p>public</p></Folder>
+        <Folder value="14" element="env"><p>env</p></Folder>
+        <File value="15" element="components.json"><p>components.json</p></File>
+        <File value="16" element="tailwind.config.js"><p>tailwind.config.js</p></File>
+        <File value="17" element="postcss.config.js"><p>postcss.config.js</p></File>
+        <File value="18" element="package.json"><p>package.json</p></File>
+      </Folder>
+      <Folder element="ws-backend" value="19">
+        <Folder value="20" element="src"><p>src</p></Folder>
+        <Folder value="21" element="env"><p>env</p></Folder>
+        <File value="22" element="env.example"><p>env.example</p></File>
+      </Folder>
+    </Folder>
+    <Folder element="packages" value="23">
+      <Folder element="common" value="24">
+        <Folder value="25" element="src"><p>src</p></Folder>
+        <File value="26" element="package.json"><p>package.json</p></File>
+        <File value="27" element="tsconfig.json"><p>tsconfig.json</p></File>
+      </Folder>
+      <Folder element="db" value="28">
+        <Folder value="29" element="prisma"><p>prisma</p></Folder>
+        <Folder value="30" element="src"><p>src</p></Folder>
+        <File value="31" element="package.json"><p>package.json</p></File>
+      </Folder>
+      <Folder element="eslint-config" value="32">
+        <File value="33"><p>base.js</p></File>
+        <File value="34"><p>next.js</p></File>
+        <File value="35"><p>package.json</p></File>
+      </Folder>
+      <Folder element="typescript-config" value="36">
+        <File value="37"><p>base.json</p></File>
+        <File value="38"><p>nextjs.json</p></File>
+        <File value="39"><p>package.json</p></File>
+      </Folder>
+      <Folder element="ui" value="40">
+        <Folder element="src" value="41">
+          <File value="42"><p>button.tsx</p></File>
+          <File value="43"><p>card.tsx</p></File>
+          <File value="44"><p>code.tsx</p></File>
+        </Folder>
+        <File value="45"><p>package.json</p></File>
+        <File value="46"><p>tsconfig.json</p></File>
+      </Folder>
+    </Folder>
+    <File value="47"><p>.gitignore</p></File>
+    <File value="48"><p>.npmrc</p></File>
+    <File value="49"><p>package.json</p></File>
+    <File value="50"><p>pnpm-lock.yaml</p></File>
+    <File value="51"><p>turbo.json</p></File>
+  </Folder>
+</Tree>
+</div>
+
+## Key Features
+
+- **Real-time Capabilities**: Integrated WebSocket support
+- **Prisma ORM**: Shared database client with migrations
+- **TypeScript First**: End-to-end type safety
+
+## Quick Start
+
+<Step copyCommand={false}> 
+```bash
+# Create new project
+npx create-turbo-tpl@latest
+
+# Choose configuration
+✔ Project name: backend-monorepo
+✔ Select framework › Turborepo
+✔ Choose template › express-prisma-ws
+
+# Start development
+cd backend-monorepo
+pnpm install
+pnpm run dev:api
+```
+</Step>
