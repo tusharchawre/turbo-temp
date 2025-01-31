@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  SearchIcon,
-} from "lucide-react";
+import { SearchIcon } from "lucide-react";
 
 import {
   CommandDialog,
@@ -21,7 +19,7 @@ import { useRouter } from "next/navigation";
 export function Search() {
   const [open, setOpen] = React.useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -59,20 +57,17 @@ export function Search() {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Documents">
-            {
-              allDocs.map((doc) => (
-                <CommandItem
+            {allDocs.map((doc) => (
+              <CommandItem
                 key={doc._id}
                 onSelect={() => {
-                  setOpen(false); 
-                  router.push(`/docs/${doc.slugAsParams}`); 
+                  setOpen(false);
+                  router.push(`/docs/${doc.slugAsParams}`);
                 }}
               >
                 {doc.title}
               </CommandItem>
-              ))
-            }
-
+            ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>

@@ -20,7 +20,7 @@ export default function FileTreeDemo() {
           "11",
           "12",
           "13",
-          "14"
+          "14",
         ]}
         elements={ELEMENTS}
       >

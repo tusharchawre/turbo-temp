@@ -1,84 +1,152 @@
-# Turborepo starter
+# Turbo-Temp
 
-This Turborepo starter is maintained by the Turborepo core team.
+🚀 **Turbo-Temp** is your go-to CLI tool for scaffolding project templates efficiently from a monorepo. It allows developers to pick a framework, select a template, and instantly set up a fully-functional project—all with one command.
 
-## Using this example
+## Features
 
-Run the following command:
+- 🌟 **Dynamic Frameworks**: Choose from multiple frameworks available in your monorepo.
+- ⚡ **Template Selection**: Pick specific templates for each framework.
+- 🛠️ **Ready to Use**: Automatically installs dependencies after setup.
+- 📁 **Customizable**: Easily add new templates to the monorepo.
+- 🤖 **Developer-Friendly**: Built with TypeScript and optimized for modern workflows.
 
-```sh
-npx create-turbo@latest
+## Getting Started
+
+Follow these steps to set up a project using **Turbo-Temp**.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+
+### Installation
+
+Run the following command to use Turbo-Temp via `npx`:
+
+```bash
+npx create-turbo-tpl@latest
 ```
 
-## What's inside?
+Alternatively, you can install it globally:
 
-This Turborepo includes the following packages/apps:
+```bash
+npm install -g create-turbo-tpl
+```
 
-### Apps and Packages
+### Usage
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Run the CLI tool to create a project:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+```bash
+npx create-turbo-tpl@latest <project-name>
+```
 
-### Utilities
+#### Example:
 
-This Turborepo has some additional tools already setup for you:
+```bash
+npx create-turbo-tpl@latest my-new-project
+```
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+If you omit `<project-name>`, it will default to `my-turbo-project`. You can customize the name during the interactive setup process.
 
-### Build
+### Interactive Setup
 
-To build all apps and packages, run the following command:
+1. Choose a framework (e.g., React, Next.js, Vue, etc.).
+2. Select a template from the available options.
+3. Sit back as Turbo-Temp:
+   - Creates the project directory
+   - Copies the selected template
+   - Installs all required dependencies
+
+### Adding New Templates
+
+To add new templates, simply:
+
+1. Navigate to the `templates` folder in your monorepo.
+2. Add your new framework as a subdirectory (if it doesn't exist).
+3. Add your template inside the framework's folder.
+
+Folder structure example:
 
 ```
-cd my-turborepo
+templates/
+├── react/
+│   ├── basic-template/
+│   └── advanced-template/
+├── nextjs/
+│   ├── starter-template/
+│   └── e-commerce-template/
+```
+
+### Commands
+
+```bash
+# Check the version
+npx create-turbo-tpl@latest -v
+
+# Display help
+npx create-turbo-tpl@latest --help
+```
+
+## Development
+
+### Local Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/turbo-temp.git
+```
+
+2. Navigate to the CLI package:
+
+```bash
+cd turbo-temp/packages/cli
+```
+
+3. Install dependencies:
+
+```bash
+pnpm install
+```
+
+4. Build the CLI:
+
+```bash
 pnpm build
 ```
 
-### Develop
+5. Run the CLI locally:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+pnpm dev <project-name>
 ```
 
-### Remote Caching
+### Testing
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+You can test the CLI by running:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```bash
+npm limk
+create-turbo-tpl <project-name>
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Contributing
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+We welcome contributions to Turbo-Temp! Please follow these steps:
 
-```
-npx turbo link
-```
+1. Fork the repository.
+2. Create a new branch for your feature/bug fix.
+3. Submit a pull request with a detailed description of your changes.
 
-## Useful Links
 
-Learn more about the power of Turborepo:
+## Support
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+If you encounter any issues or have questions, feel free to:
+
+- Open an issue on GitHub
+---
+
+🌟 **Star this repo** if you find it useful!

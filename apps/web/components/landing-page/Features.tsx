@@ -1,6 +1,5 @@
 import DisplayCards from "../ui/display-cards";
 
-
 export const Features = () => {
   return (
     <div className="w-full flex items-center justify-center py-24 relative px-32">

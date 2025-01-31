@@ -167,11 +167,12 @@ const Tree = forwardRef<HTMLDivElement, TreeViewProps>(
               onValueChange={(value) => {
                 if (setExpandedItems) {
                   setExpandedItems((prev) =>
-                    [...(prev ?? []), value[0]].filter((item): item is string => item !== undefined)
+                    [...(prev ?? []), value[0]].filter(
+                      (item): item is string => item !== undefined,
+                    ),
                   );
                 }
               }}
-              
               dir={dir as Direction}
             >
               {children}
@@ -275,13 +276,14 @@ const Folder = forwardRef<
             defaultValue={expandedItems}
             value={expandedItems}
             onValueChange={(value) => {
-                if (setExpandedItems) {
-                  setExpandedItems((prev) =>
-                    [...(prev ?? []), value[0]].filter((item): item is string => item !== undefined)
-                  );
-                }
-              }}
-              
+              if (setExpandedItems) {
+                setExpandedItems((prev) =>
+                  [...(prev ?? []), value[0]].filter(
+                    (item): item is string => item !== undefined,
+                  ),
+                );
+              }
+            }}
           >
             {children}
           </AccordionPrimitive.Root>
