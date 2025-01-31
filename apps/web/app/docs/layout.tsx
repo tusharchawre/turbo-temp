@@ -16,17 +16,17 @@ export default async function DocLayout({
 }>) {
 
   return (
-      <main className={`h-screen w-full ${inter.className}`} >
-        <Navbar />
-        <Separator />
-          <div className="flex overflow-hidden">
-            <aside className="sticky h-screen no-scrollbar overflow-scroll shrink-0">
-            <AppSidebar config={docsConfig} />
-            </aside>
-            <div className="overflow-scroll w-[90%]">
-              {children}
-            </div>
-          </div>
-          </main>
+    <main className={`h-screen w-full flex flex-col ${inter.className}`}>
+    <Navbar />
+    <Separator />
+    <div className="flex flex-1 overflow-hidden">
+      <aside className="sticky top-0 h-screen overflow-y-auto shrink-0">
+        <AppSidebar config={docsConfig} />
+      </aside>
+      <div className="flex-1 h-full overflow-auto">
+        {children}
+      </div>
+    </div>
+  </main>
   );
 }

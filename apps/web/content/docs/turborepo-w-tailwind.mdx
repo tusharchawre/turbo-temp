@@ -1,15 +1,13 @@
 ---
-title: Turborepo with Shadcn/UI
-description: Learn how to set up and structure a Turborepo project with Shadcn/UI components.
+title: Turborepo with Tailwind CSS
+description: This is a repo with Tailwind CSS configured in a Turborepo setup
 ---
 
-# Turborepo with Shadcn/UI
-
-This guide walks you through the structure and setup of a Turborepo configured with Shadcn/UI components.
+This guide will help you understand the structure and setup of a Turborepo configured with Tailwind CSS for consistent and scalable styling across applications and packages.
 
 ## Project Structure
 
-Below is the directory structure of the Turborepo setup:
+Below is the structure of our Turborepo setup with Tailwind CSS:
 
    <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
 <Tree
@@ -205,12 +203,12 @@ Below is the directory structure of the Turborepo setup:
 </div>
 
 
-### Key Features
+## Key Features
 
-- **Monorepo Structure**: Efficient management using Turborepo.
-- **Shared UI Components**: Shadcn/UI components are reusable across all applications.
-- **Type Safety**: Full TypeScript support throughout the project.
-- **Consistent Styling**: Tailwind CSS configuration is shared across packages.
+- **Monorepo Structure**: Efficiently manage multiple apps and shared packages
+- **Shared Tailwind Configuration**: Centralized Tailwind setup for consistent styling
+- **Type Safety**: Full TypeScript support across all apps and packages
+- **Scalable Styling**: Utility-first CSS for rapid UI development
 
 ## Quick Start
 
@@ -221,40 +219,12 @@ npx create-turbo-tpl@latest
 
 # Choose your setup
 ✔ Project name: my-turborepo
-✔ Select framework: Turborepo
-✔ Choose template: turborepo-with-shadcn
+✔ Select framework › Turborepo
+✔ Choose template › turborepo-with-tailwind
 
 # Your monorepo is ready!
 cd my-turborepo
 pnpm run dev
 ```
+
 </Step>
-
-## Project Organization
-
-### Apps Directory
-The `apps` directory contains your main applications:
-
-- `web`: The primary web application.
-- `docs`: Documentation site (optional).
-
-
-## Development Workflow
-
-1. Run all apps in development mode:
-   ```bash
-   pnpm run dev
-   ```
-2. Build all apps and packages:
-   ```bash
-   pnpm run build
-   ```
-
-## Configuration Files
-
-- **`turbo.json`**: Defines the task pipeline and dependencies.
-- **`tailwind.config.ts`**: Shared Tailwind CSS configuration.
-- **`tsconfig.json`**: Base TypeScript configuration.
-
-
-
