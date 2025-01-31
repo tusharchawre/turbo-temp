@@ -1,9 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
-
-import {SourcePlugin} from "contentlayer2/core"
-import FileTreeDemo from './components/docs/file-tree-demo';
-
-
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
+import { createHighlighter } from "shiki"
 
 
 export const Doc = defineDocumentType(()=>({
@@ -42,9 +41,10 @@ const mySource: ReturnType<typeof makeSource>  = makeSource({
     contentDirPath: './content',
     documentTypes: [Doc],
     mdx: {
-        remarkPlugins: [],
-        rehypePlugins: [],
-        
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+          rehypeSlug
+        ],
       },
     })
 

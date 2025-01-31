@@ -1,0 +1,260 @@
+---
+title: Turborepo with Shadcn/UI
+description: Learn how to set up and structure a Turborepo project with Shadcn/UI components.
+---
+
+# Turborepo with Shadcn/UI
+
+This guide walks you through the structure and setup of a Turborepo configured with Shadcn/UI components.
+
+## Project Structure
+
+Below is the directory structure of the Turborepo setup:
+
+   <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+<Tree
+        className="overflow-hidden rounded-md bg-background p-2"
+        initialSelectedId="1"
+        initialExpandedItems={[
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]}
+        elements={[
+  {
+    id: "1",
+    isSelectable: true,
+    name: "turborepo-with-tailwindcss",
+    children: [
+      {
+        id: "2",
+        isSelectable: true,
+        name: "apps/web",
+        children: [
+          {
+            id: "3",
+            isSelectable: true,
+            name: "app",
+            children: [
+              {
+                id: "4",
+                isSelectable: true,
+                name: "favicon.ico",
+              },
+              {
+                id: "5",
+                isSelectable: true,
+                name: "globals.css",
+              },
+              {
+                id: "6",
+                isSelectable: true,
+                name: "layout.tsx",
+              },
+              {
+                id: "7",
+                isSelectable: true,
+                name: "page.tsx",
+              },
+            ],
+          },
+          {
+            id: "8",
+            isSelectable: true,
+            name: "public",
+            children: [
+              {
+                id: "9",
+                isSelectable: true,
+                name: "circles.svg",
+              },
+              {
+                id: "10",
+                isSelectable: true,
+                name: "next.svg",
+              },
+              {
+                id: "11",
+                isSelectable: true,
+                name: "turborepo.svg",
+              },
+              {
+                id: "12",
+                isSelectable: true,
+                name: "vercel.svg",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "13",
+        isSelectable: true,
+        name: "eslint.config.js",
+      },
+      {
+        id: "14",
+        isSelectable: true,
+        name: "next-env.d.ts",
+      },
+      {
+        id: "15",
+        isSelectable: true,
+        name: "next.config.ts",
+      },
+      {
+        id: "16",
+        isSelectable: true,
+        name: "package.json",
+      },
+      {
+        id: "17",
+        isSelectable: true,
+        name: "postcss.config.js",
+      },
+      {
+        id: "18",
+        isSelectable: true,
+        name: "README.md",
+      },
+      {
+        id: "19",
+        isSelectable: true,
+        name: "tailwind.config.ts",
+      },
+      {
+        id: "20",
+        isSelectable: true,
+        name: "tsconfig.json",
+      },
+    ],
+  },
+]}
+      >
+        <Folder element="turborepo-with-tailwindcss" value="1">
+          <Folder element="apps/web" value="2">
+            <Folder element="app" value="3">
+              <File value="4">
+                <p>favicon.ico</p>
+              </File>
+              <File value="5">
+                <p>globals.css</p>
+              </File>
+              <File value="6">
+                <p>layout.tsx</p>
+              </File>
+              <File value="7">
+                <p>page.tsx</p>
+              </File>
+            </Folder>
+            <Folder element="public" value="8">
+              <File value="9">
+                <p>circles.svg</p>
+              </File>
+              <File value="10">
+                <p>next.svg</p>
+              </File>
+              <File value="11">
+                <p>turborepo.svg</p>
+              </File>
+              <File value="12">
+                <p>vercel.svg</p>
+              </File>
+            </Folder>
+          </Folder>
+          <File value="13">
+            <p>eslint.config.js</p>
+          </File>
+          <File value="14">
+            <p>next-env.d.ts</p>
+          </File>
+          <File value="15">
+            <p>next.config.ts</p>
+          </File>
+          <File value="16">
+            <p>package.json</p>
+          </File>
+          <File value="17">
+            <p>postcss.config.js</p>
+          </File>
+          <File value="18">
+            <p>README.md</p>
+          </File>
+          <File value="19">
+            <p>tailwind.config.ts</p>
+          </File>
+          <File value="20">
+            <p>tsconfig.json</p>
+          </File>
+        </Folder>
+      </Tree>
+
+
+
+</div>
+
+
+### Key Features
+
+- **Monorepo Structure**: Efficient management using Turborepo.
+- **Shared UI Components**: Shadcn/UI components are reusable across all applications.
+- **Type Safety**: Full TypeScript support throughout the project.
+- **Consistent Styling**: Tailwind CSS configuration is shared across packages.
+
+## Quick Start
+
+<Step copyCommand={false}>
+```bash
+# Run the CLI
+npx create-turbo-tpl@latest
+
+# Choose your setup
+✔ Project name: my-turborepo
+✔ Select framework: Turborepo
+✔ Choose template: turborepo-with-shadcn
+
+# Your monorepo is ready!
+cd my-turborepo
+pnpm run dev
+```
+</Step>
+
+## Project Organization
+
+### Apps Directory
+The `apps` directory contains your main applications:
+
+- `web`: The primary web application.
+- `docs`: Documentation site (optional).
+
+
+## Development Workflow
+
+1. Run all apps in development mode:
+   ```bash
+   pnpm run dev
+   ```
+2. Build all apps and packages:
+   ```bash
+   pnpm run build
+   ```
+
+## Configuration Files
+
+- **`turbo.json`**: Defines the task pipeline and dependencies.
+- **`tailwind.config.ts`**: Shared Tailwind CSS configuration.
+- **`tsconfig.json`**: Base TypeScript configuration.
+
+
+
