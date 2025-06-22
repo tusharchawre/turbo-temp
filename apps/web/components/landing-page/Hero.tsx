@@ -32,19 +32,19 @@ export const Hero = () => {
 
   return (
     <div
-      className={`w-full flex items-center justify-center text-foreground pt-28`}
+      className={`w-full flex items-center justify-center text-foreground pt-16 sm:pt-28 px-2`}
     >
-      <div className="flex flex-col gap-2 text-center items-center justify-center w-[900px]">
-        <h1 className="font-bold text-[52px]">
+      <div className="flex flex-col gap-2 text-center items-center justify-center w-full max-w-[900px] px-2">
+        <h1 className="font-bold text-3xl sm:text-[52px] leading-tight sm:leading-[1.1]">
           Skip the Setup, Start Building
         </h1>
-        <p className="text-foreground/50">
+        <p className="text-foreground/50 text-base sm:text-lg">
           Transform your workflow with one command. Our CLI instantly scaffolds
           Turborepo, Next.js, and React projects with proven templates. No setup
           headaches - start building what matters in seconds.
         </p>
 
-        <div className="w-2xl h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-12 rounded-2xl px-6 py-2 flex items-center justify-between relative z-40">
+        <div className="w-full h-[64px] sm:h-[78px] dark:bg-[#171717] bg-[#F5F5F5] mt-8 sm:mt-12 rounded-2xl px-2 sm:px-6 py-2 flex items-center justify-between relative z-40 overflow-x-auto">
           <div className="flex items-center gap-4">
             {/* Render the Image only when the theme is resolved */}
             {resolvedTheme ? (

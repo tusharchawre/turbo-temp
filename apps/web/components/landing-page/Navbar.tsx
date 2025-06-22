@@ -14,8 +14,8 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="w-full mx-auto inset-0 flex items-center justify-between h-12 px-8">
-      <div className="text-2xl text-foreground flex gap-12 items-center cursor-default">
+    <div className="w-full mx-auto inset-0 flex flex-col sm:flex-row items-center justify-between h-fit sm:h-12 px-4 sm:px-8 py-2 sm:py-0 gap-2 sm:gap-0">
+      <div className="text-2xl text-foreground flex gap-6 sm:gap-12 items-center cursor-default">
         <p onClick={() => router.push("/")}>turbo_tpl</p>
         <p
           onClick={() => router.push("/docs")}

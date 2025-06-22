@@ -6,8 +6,8 @@ export const Footer = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-64 border-t border-t-foreground/30 translate-y-4 px-12 py-8 cursor-default">
-      <div className="w-full max-w-[1240px] flex items-start justify-between">
+    <div className="w-full relative z-[100] h-fit sm:h-64 border-t border-t-foreground/30 translate-y-2 sm:translate-y-4 px-4 sm:px-12 py-6 sm:py-8 cursor-default">
+      <div className="w-full max-w-[1240px] flex flex-col sm:flex-row items-start justify-between gap-8 sm:gap-0">
         <div>
           <h1 className="text-2xl mb-1">turbo_tpl</h1>
           <p className="text-base text-foreground/40">
